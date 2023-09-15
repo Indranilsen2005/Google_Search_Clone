@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_search_clone/colors.dart';
 import 'package:google_search_clone/google_search_clone_icons.dart';
 import 'package:google_search_clone/widgets/search_box.dart';
+import 'package:google_search_clone/widgets/translations.dart';
 import 'package:google_search_clone/widgets/web/search_buttons.dart';
 
 class WebScreenLayout extends StatelessWidget {
@@ -72,6 +73,8 @@ class WebScreenLayout extends StatelessWidget {
             const SearchBox(),
             const SizedBox(height: 30),
             const SearchButtons(),
+            const SizedBox(height: 30),
+            const TranslationButtons(),
           ],
         ),
       ),
