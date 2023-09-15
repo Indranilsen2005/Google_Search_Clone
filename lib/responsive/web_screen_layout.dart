@@ -5,6 +5,7 @@ import 'package:google_search_clone/google_search_clone_icons.dart';
 import 'package:google_search_clone/widgets/search_box.dart';
 import 'package:google_search_clone/widgets/translations.dart';
 import 'package:google_search_clone/widgets/web/search_buttons.dart';
+import 'package:google_search_clone/widgets/web/web_footer.dart';
 
 class WebScreenLayout extends StatelessWidget {
   const WebScreenLayout({super.key});
@@ -48,7 +49,7 @@ class WebScreenLayout extends StatelessWidget {
             ),
             child: MaterialButton(
               onPressed: () {},
-              color: const Color.fromARGB(255, 23, 42, 244),
+              color: Colors.blueAccent[100],
               padding: const EdgeInsets.symmetric(
                 horizontal: 32,
                 vertical: 18,
@@ -56,25 +57,55 @@ class WebScreenLayout extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: const Text('Sign in'),
+              child: const Text(
+                'Sign in',
+                style: TextStyle(color: Colors.black),
+              ),
             ),
           ),
         ],
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/google-logo.png',
-              height: 100,
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/google-logo.png',
+                    height: 100,
+                  ),
+                  const SizedBox(height: 30),
+                  const SearchBox(),
+                  const SizedBox(height: 30),
+                  const SearchButtons(),
+                  const SizedBox(height: 30),
+                  const TranslationButtons(),
+                ],
+              ),
             ),
-            const SizedBox(height: 30),
-            const SearchBox(),
-            const SizedBox(height: 30),
-            const SearchButtons(),
-            const SizedBox(height: 30),
-            const TranslationButtons(),
+            Container(
+              color: footerColor,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 30,
+                vertical: 15,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'India',
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.65),
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 2),
+            const WebFooter(),
           ],
         ),
       ),
