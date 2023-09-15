@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_search_clone/colors.dart';
 import 'package:google_search_clone/google_search_clone_icons.dart';
 import 'package:google_search_clone/widgets/search_box.dart';
+import 'package:google_search_clone/widgets/web/search_buttons.dart';
 
 class WebScreenLayout extends StatelessWidget {
   const WebScreenLayout({super.key});
@@ -67,8 +68,10 @@ class WebScreenLayout extends StatelessWidget {
               'assets/images/google-logo.png',
               height: 100,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
             const SearchBox(),
+            const SizedBox(height: 30),
+            const SearchButtons(),
           ],
         ),
       ),
