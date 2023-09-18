@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:google_search_clone/colors.dart';
 import 'package:google_search_clone/google_search_clone_icons.dart';
+import 'package:google_search_clone/widgets/mobile/mobile_footer.dart';
 import 'package:google_search_clone/widgets/search_box.dart';
 import 'package:google_search_clone/widgets/translations.dart';
 import 'package:google_search_clone/widgets/web/search_buttons.dart';
@@ -12,6 +13,8 @@ class WebScreenLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -81,7 +84,7 @@ class WebScreenLayout extends StatelessWidget {
                   const SizedBox(height: 30),
                   const SearchButtons(),
                   const SizedBox(height: 30),
-                  const TranslationButtons(),
+                  const TranslationButtons(screen: 'web'),
                 ],
               ),
             ),
@@ -105,7 +108,7 @@ class WebScreenLayout extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 2),
-            const WebFooter(),
+            size.width > 720 ? const WebFooter() : const MobileFooter(),
           ],
         ),
       ),
